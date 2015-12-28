@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D9c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WaniKani_Kanji_Strokes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,10 +17,123 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngn-Xr-PgJ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="IOq-as-lXG"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="0" id="gp7-nT-5FX">
+                                        <connections>
+                                            <action selector="levelPickerButtonPressed:" destination="BYZ-38-t0r" id="yTi-xp-nde"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="8lv-BW-fch"/>
+                                    <barButtonItem title="1" id="mjU-Ee-OZm">
+                                        <connections>
+                                            <action selector="levelPickerButtonPressed:" destination="BYZ-38-t0r" id="8Cm-AA-P4a"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="yg9-v9-4ps"/>
+                                    <barButtonItem title="2" id="Khn-Nh-5uf">
+                                        <connections>
+                                            <action selector="levelPickerButtonPressed:" destination="BYZ-38-t0r" id="6PD-Zd-sKY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="xOj-pN-GBA"/>
+                                    <barButtonItem title="3" id="DLB-ov-Nyw">
+                                        <connections>
+                                            <action selector="levelPickerButtonPressed:" destination="BYZ-38-t0r" id="aHb-ha-tJ9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="IeV-Zg-x5M"/>
+                                    <barButtonItem title="4" id="Jek-fB-Rc8">
+                                        <connections>
+                                            <action selector="levelPickerButtonPressed:" destination="BYZ-38-t0r" id="Zbj-nG-QBi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="35" style="plain" systemItem="fixedSpace" id="bUa-dt-HQA"/>
+                                    <barButtonItem title="5" id="bhE-VH-yPf">
+                                        <connections>
+                                            <action selector="levelPickerButtonPressed:" destination="BYZ-38-t0r" id="Wfw-X5-Cy4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oks-ZH-spP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <connections>
+                                    <segue destination="RPM-2Y-bVh" kind="embed" identifier="kanjiPick" id="BT5-IT-Kf7"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ngn-Xr-PgJ" secondAttribute="trailing" id="5dg-2C-QAD"/>
+                            <constraint firstItem="ngn-Xr-PgJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AKQ-VG-7lQ"/>
+                            <constraint firstItem="Oks-ZH-spP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QLg-RA-ADp"/>
+                            <constraint firstItem="ngn-Xr-PgJ" firstAttribute="top" secondItem="Oks-ZH-spP" secondAttribute="bottom" id="ZCX-Rv-4L8"/>
+                            <constraint firstAttribute="trailing" secondItem="Oks-ZH-spP" secondAttribute="trailing" id="bo7-Dl-rFP"/>
+                            <constraint firstAttribute="bottom" secondItem="ngn-Xr-PgJ" secondAttribute="bottom" id="f6T-m0-f0q"/>
+                            <constraint firstItem="Oks-ZH-spP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="u0t-Pd-CRt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="levelButton" destination="gp7-nT-5FX" id="bWN-zF-y08"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-409" y="286"/>
+        </scene>
+        <!--Kanji View Controller-->
+        <scene sceneID="S9c-sm-IFR">
+            <objects>
+                <viewController id="RPM-2Y-bVh" customClass="KanjiViewController" customModule="WaniKani_Kanji_Strokes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JRM-AM-8uz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miw-DM-eXW">
+                                <rect key="frame" x="10" y="10" width="580" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yth-TJ-VJp" customClass="StrokeDrawingView" customModule="StrokeDrawingView">
+                                        <rect key="frame" x="22" y="0.0" width="536" height="536"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Yth-TJ-VJp" secondAttribute="height" multiplier="1:1" id="3Zv-9p-pa9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Yth-TJ-VJp" firstAttribute="leading" secondItem="miw-DM-eXW" secondAttribute="leading" priority="750" id="NNr-3H-vBq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yth-TJ-VJp" secondAttribute="trailing" priority="750" id="WMg-KX-OcR"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yth-TJ-VJp" secondAttribute="bottom" priority="750" id="Y5x-hk-2Os"/>
+                                    <constraint firstItem="Yth-TJ-VJp" firstAttribute="centerY" secondItem="miw-DM-eXW" secondAttribute="centerY" id="dri-lk-zQk"/>
+                                    <constraint firstItem="Yth-TJ-VJp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="miw-DM-eXW" secondAttribute="leading" id="gg8-Qo-4k9"/>
+                                    <constraint firstItem="Yth-TJ-VJp" firstAttribute="top" secondItem="miw-DM-eXW" secondAttribute="top" priority="750" id="ghi-a1-aRa"/>
+                                    <constraint firstItem="Yth-TJ-VJp" firstAttribute="centerX" secondItem="miw-DM-eXW" secondAttribute="centerX" id="kQu-yI-amy"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Yth-TJ-VJp" secondAttribute="bottom" id="p5I-Q2-F6S"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Yth-TJ-VJp" secondAttribute="trailing" id="rpE-f3-FIz"/>
+                                    <constraint firstItem="Yth-TJ-VJp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="miw-DM-eXW" secondAttribute="top" id="u9M-ET-Xfg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="miw-DM-eXW" firstAttribute="top" secondItem="JRM-AM-8uz" secondAttribute="top" constant="10" id="627-yN-9Z9"/>
+                            <constraint firstAttribute="trailing" secondItem="miw-DM-eXW" secondAttribute="trailing" constant="10" id="AxY-Db-IXT"/>
+                            <constraint firstAttribute="bottom" secondItem="miw-DM-eXW" secondAttribute="bottom" constant="10" id="ZHs-Qm-mTo"/>
+                            <constraint firstItem="miw-DM-eXW" firstAttribute="leading" secondItem="JRM-AM-8uz" secondAttribute="leading" constant="10" id="pVe-Fb-lBz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="strokeDrawingView" destination="Yth-TJ-VJp" id="7Mo-E9-yDb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fS9-N7-B8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>

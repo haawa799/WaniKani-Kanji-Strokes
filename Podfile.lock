@@ -1,0 +1,44 @@
+PODS:
+  - ActionSheetPicker-3.0 (2.0.4)
+  - AWSQLiteDB (0.1.2)
+  - KanjiBezierPaths (0.1.0):
+    - AWSQLiteDB
+  - StrokeDrawingView (0.1.1)
+  - WaniKit (0.1.0)
+
+DEPENDENCIES:
+  - ActionSheetPicker-3.0 (~> 2.0.4)
+  - KanjiBezierPaths (from `https://github.com/haawa799/KanjiBezierPaths.git`)
+  - StrokeDrawingView (from `https://github.com/haawa799/StrokeDrawingView.git`, branch
+    `master`)
+  - WaniKit (from `https://github.com/haawa799/WaniKit.git`, branch `master`)
+
+EXTERNAL SOURCES:
+  KanjiBezierPaths:
+    :git: https://github.com/haawa799/KanjiBezierPaths.git
+  StrokeDrawingView:
+    :branch: master
+    :git: https://github.com/haawa799/StrokeDrawingView.git
+  WaniKit:
+    :branch: master
+    :git: https://github.com/haawa799/WaniKit.git
+
+CHECKOUT OPTIONS:
+  KanjiBezierPaths:
+    :commit: b5da424af2261b8209de89f46a17af83770d7167
+    :git: https://github.com/haawa799/KanjiBezierPaths.git
+  StrokeDrawingView:
+    :commit: 4ed0c21b579dee10976129ae4db561745b97f137
+    :git: https://github.com/haawa799/StrokeDrawingView.git
+  WaniKit:
+    :commit: fea1ca114bf3fcd219b00e3bcfa365ba997593b4
+    :git: https://github.com/haawa799/WaniKit.git
+
+SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: 860466cb4a66854e6acb590071ecee404b48f49d
+  AWSQLiteDB: 233c76f09d185268b77102860e4435773e93dbc1
+  KanjiBezierPaths: ea25ba285699b1b506492597df9e02a93ffbc1ef
+  StrokeDrawingView: 5d26664a4391804118fbfc2b3d4a5235a0057749
+  WaniKit: d8ad22b1707fefc5559ab5b2b60429c4778b03aa
+
+COCOAPODS: 0.39.0

@@ -7,19 +7,54 @@
 //
 
 import UIKit
+import StrokeDrawingView
+import WaniKit
 
 class ViewController: UIViewController {
-
+  
+  var kanjiViewController: KanjiViewController?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    let manager = WaniApiManager()
+    manager.setApiKey("c6ce4072cf1bd37b407f2c86d69137e3")
+    
+    manager.fetchKanjiList(11) { (result) -> Void in
+      switch result {
+      case .Error(let error) : print(error())
+      case .Response(let response) :
+        let resp = response()
+        
+        self.kanjiArray = resp.kanji
+      }
+    }
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    super.prepareForSegue(segue, sender: sender)
+    
+    if let kanjiVC = segue.destinationViewController as? KanjiViewController {
+      kanjiViewController = kanjiVC
+    }
   }
-
-
+  
+  var kanjiArray: [KanjiInfo]?
+  
+  @IBOutlet weak var levelButton: UIBarButtonItem!
+  
+  var kanji: Kanji?
+  
+  @IBAction func levelPickerButtonPressed(sender: AnyObject) {
+    
+    guard let title = (sender as? UIBarButtonItem)?.title, let index = Int(title) else { return }
+    
+    guard (index < kanjiArray?.count), let kanjiName = kanjiArray?[index].character else { return }
+    
+    kanji = Kanji(kanji: kanjiName)
+    kanjiViewController?.kanji = kanji
+  }
+  
 }
+
 
